@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
 function App() {
   const [storeInfo, setStoreInfo] = useState({});
@@ -21,9 +21,9 @@ function App() {
 
   return (
     <>
-        {storeInfo.name} {storeInfo.category}
+      {storeInfo.name} {storeInfo.category}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
