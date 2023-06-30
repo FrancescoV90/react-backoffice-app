@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Dashboard.css";
+import Products from "../Products/Products";
 
 interface IStoreInfo {
   name: string;
@@ -7,7 +8,7 @@ interface IStoreInfo {
   employees: string[];
 }
 
-function App() {
+function Dashboard() {
   const [storeInfo, setStoreInfo] = useState<IStoreInfo>({
     name: "",
     category: "",
@@ -48,8 +49,9 @@ function App() {
           </p>
         </header>
       )}
+      <Products />
     </>
   );
 }
 
-export default App;
+export default Dashboard;
