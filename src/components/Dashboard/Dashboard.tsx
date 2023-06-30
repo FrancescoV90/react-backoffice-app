@@ -1,7 +1,17 @@
 import { useState, useEffect } from "react";
 
+interface IStoreInfo {
+  name: string;
+  category: string;
+  employees: string[];
+}
+
 function App() {
-  const [storeInfo, setStoreInfo] = useState({});
+  const [storeInfo, setStoreInfo] = useState<IStoreInfo>({
+    name: "",
+    category: "",
+    employees: [],
+  });
 
   const fetchStoreInfoData = () => {
     fetch(
@@ -21,7 +31,9 @@ function App() {
 
   return (
     <>
-      {storeInfo.name} {storeInfo.category}
+      <h1>
+        {storeInfo.name} - {storeInfo.category}
+      </h1>
     </>
   );
 }

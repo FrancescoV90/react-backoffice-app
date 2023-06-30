@@ -13,9 +13,12 @@ body {
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1em;
   line-height: 1.5;
   font-weight: 400;
+  letter-spacing: 0.031rem;
 
   color: #213547;
   background-color: #ffffff;
@@ -35,6 +38,8 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 1.75em;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
 }
