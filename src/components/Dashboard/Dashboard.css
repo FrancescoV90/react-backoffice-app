@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+@media (min-width: 1024px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

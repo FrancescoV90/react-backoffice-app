@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./Dashboard.css";
 
 interface IStoreInfo {
   name: string;
@@ -31,9 +32,22 @@ function App() {
 
   return (
     <>
-      <h1>
-        {storeInfo.name} - {storeInfo.category}
-      </h1>
+      {storeInfo.name && storeInfo.category && storeInfo.employees.length && (
+        <header className="header">
+          <h1>
+            {storeInfo.name} - {storeInfo.category}
+          </h1>
+          <p>
+            <span>Dipendenti: </span>
+            {storeInfo.employees.map((employe, index) => (
+              <span key={`emplye_${index}`}>
+                {employe}
+                {index < storeInfo.employees.length - 1 ? "," : ""}{" "}
+              </span>
+            ))}
+          </p>
+        </header>
+      )}
     </>
   );
 }
