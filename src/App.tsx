@@ -4,7 +4,7 @@ import { useProductsStore } from "./store/products/products.store";
 import Products from "./components/Products/Products";
 import "./App.scss";
 
-function App() {
+const App = () => {
   const [storeInfo, setStoreInfo] = useState<IStoreInfo>({
     name: "",
     category: "",
@@ -50,6 +50,6 @@ function App() {
       <Products products={products} />
     </>
   );
-}
+};
 
 export default App;

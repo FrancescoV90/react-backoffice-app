@@ -1,21 +1,32 @@
 import { useState } from "react";
-import { IProductsResponse } from "../../interfaces/backoffice.interfaces";
+import {
+  IProductResponse,
+  IProductsProps,
+} from "../../interfaces/backoffice.interfaces";
+import Product from "../Product/Product";
+import "./Products.scss";
 
-function Products(props: { products: IProductsResponse[] }) {
+const Products = ({ products }: IProductsProps) => {
   const [isPanelView, setIsPanelView] = useState<boolean>(false);
 
+  const onChangeView = () => {
+    setIsPanelView(!isPanelView);
+  };
+
   return (
-    <div className={isPanelView ? "panel" : "grid"}>
-      {props.products.map((product: IProductsResponse, index: number) => (
-        <li key={`product_${index}`}>
-          {/* <Product product={product} /> */}
-          li
-        </li>
-      ))}
-    </div>
+    <>
+      <button className="change-view-button" onClick={onChangeView}>
+        Cambia visualizzazione prodotti
+      </button>
+      <ul className={isPanelView ? "panel" : "grid"}>
+        {products.map((product: IProductResponse) => (
+          <li key={`product_${product.id}`}>
+            {<Product data={product.data} />}
+          </li>
+        ))}
+      </ul>
+    </>
   );
-}
+};
 
 export default Products;
-
-// function Products({id, data}: IProductResponse) {

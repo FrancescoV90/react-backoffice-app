@@ -4,7 +4,7 @@ export interface IStoreInfo {
   employees: string[];
 }
 
-export interface IProductsResponse {
+export interface IProductResponse {
   id: string;
   data: IProductData;
 }
@@ -18,7 +18,13 @@ export interface IProductData {
   reviews: string[];
 }
 
+export interface IProductsProps {
+  products: IProductResponse[];
+}
+
+export type IProductProps = Omit<IProductResponse, "id">;
+
 export interface IProductsState {
-  products: IProductsResponse[];
+  products: IProductResponse[];
   getAllProducts: () => void;
 }
