@@ -1,22 +1,13 @@
-import { useEffect, useState } from "react";
-import { useProductsStore } from "../../store/products/products.store";
+import { useState } from "react";
 import { IProductsResponse } from "../../interfaces/backoffice.interfaces";
 
-// enum ViewsEnum {
-// LIST = 'list'
-// }
-function Products() {
-  const { products, getAllProducts } = useProductsStore();
+function Products(props: { products: IProductsResponse[] }) {
   const [isPanelView, setIsPanelView] = useState<boolean>(false);
-
-  useEffect(() => {
-    getAllProducts();
-  }, []);
 
   return (
     <div className={isPanelView ? "panel" : "grid"}>
-      {products.map((product: IProductsResponse) => (
-        <li>
+      {props.products.map((product: IProductsResponse, index: number) => (
+        <li key={`product_${index}`}>
           {/* <Product product={product} /> */}
           li
         </li>

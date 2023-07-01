@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { IStoreInfo } from "./interfaces/backoffice.interfaces";
+import { useProductsStore } from "./store/products/products.store";
 import Products from "./components/Products/Products";
 import "./App.scss";
 
@@ -9,6 +10,7 @@ function App() {
     category: "",
     employees: [],
   });
+  const { products, getAllProducts } = useProductsStore();
 
   const fetchStoreInfoData = () => {
     fetch(
@@ -24,6 +26,7 @@ function App() {
 
   useEffect(() => {
     fetchStoreInfoData();
+    getAllProducts();
   }, []);
 
   return (
@@ -44,7 +47,7 @@ function App() {
           </p>
         </header>
       )}
-      <Products />
+      <Products products={products} />
     </>
   );
 }
