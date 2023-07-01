@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Dashboard.css";
+import "./Dashboard.scss";
 import Products from "../Products/Products";
 
 interface IStoreInfo {
