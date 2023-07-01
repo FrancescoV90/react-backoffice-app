@@ -28,3 +28,8 @@ export interface IProductsState {
   products: IProductResponse[];
   getAllProducts: () => void;
 }
+
+export interface IStoreInfoState {
+  storeInfo: IStoreInfo;
+  getStoreInfo: () => void;
+}
