@@ -1,12 +1,7 @@
 import { create } from "zustand";
-import { IProductResponse } from "../../components/Products/Products";
+import { IProductsState } from "../../interfaces/backoffice.interfaces";
 
-interface ProductsState {
-  products: IProductResponse[];
-  getAllProducts: () => void;
-}
-
-export const useProductsStore = create<ProductsState>((set, get) => ({
+export const useProductsStore = create<IProductsState>((set, get) => ({
   products: [],
   //   getProduct: (id) => get().products.,
   getAllProducts: async () => {

@@ -1,19 +1,7 @@
 import { useEffect, useState } from "react";
 import { useProductsStore } from "../../store/products/products.store";
+import { IProductsResponse } from "../../interfaces/backoffice.interfaces";
 
-export interface IProductResponse {
-  id: string;
-  data: IProductData;
-}
-
-interface IProductData {
-  title: string;
-  category: string;
-  price: number;
-  employee: string;
-  description: string;
-  reviews: string[];
-}
 // enum ViewsEnum {
 // LIST = 'list'
 // }
@@ -27,7 +15,7 @@ function Products() {
 
   return (
     <div className={isPanelView ? "panel" : "grid"}>
-      {products.map((product: IProductResponse) => (
+      {products.map((product: IProductsResponse) => (
         <li>
           {/* <Product product={product} /> */}
           li
