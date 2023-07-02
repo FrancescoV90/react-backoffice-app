@@ -22,11 +22,12 @@ export interface IProductsProps {
   products: IProductResponse[];
 }
 
-export type IProductProps = Omit<IProductResponse, "id">;
+export interface IProductProps extends IProductResponse {}
 
 export interface IProductsState {
   products: IProductResponse[];
   getAllProducts: () => void;
+  deleteProduct: (idProduct: string) => void;
 }
 
 export interface IStoreInfoState {

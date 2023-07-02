@@ -21,7 +21,7 @@ const Products = ({ products }: IProductsProps) => {
       <ul className={isPanelView ? "panel" : "grid"}>
         {products.map((product: IProductResponse) => (
           <li key={`product_${product.id}`}>
-            {<Product data={product.data} />}
+            {<Product id={product.id} data={product.data} />}
           </li>
         ))}
       </ul>
