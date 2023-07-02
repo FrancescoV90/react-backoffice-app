@@ -9,6 +9,11 @@ export interface IProductResponse {
   data: IProductData;
 }
 
+export interface IStatResponse {
+  numberOfProducts: number;
+  category: string;
+}
+
 export interface IProductData {
   title: string;
   category: string;
@@ -26,6 +31,8 @@ export interface IProductProps extends IProductResponse {}
 
 export interface IProductsState {
   products: IProductResponse[];
+  stats: IStatResponse[];
+  getStats: () => void;
   getAllProducts: () => void;
   deleteProduct: (idProduct: string) => void;
 }
@@ -33,14 +40,4 @@ export interface IProductsState {
 export interface IStoreInfoState {
   storeInfo: IStoreInfo;
   getStoreInfo: () => void;
-}
-
-export interface IStatResponse {
-  numberOfProducts: number;
-  category: string;
-}
-
-export interface IStotsState {
-  stats: IStatResponse[];
-  getStots: () => void;
 }

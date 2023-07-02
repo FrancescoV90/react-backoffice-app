@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useProductsStore } from "./store/products.store";
 import { useStoreInfo } from "./store/store-info.store";
-import { useStatsStore } from "./store/stats.store";
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -10,19 +9,20 @@ import {
   Legend,
 } from "chart.js";
 import { PolarArea } from "react-chartjs-2";
+import { ReactNotifications } from "react-notifications-component";
 import Products from "./components/Products/Products";
+import "react-notifications-component/dist/theme.css";
 import "./App.scss";
 
 const App = () => {
   const { storeInfo, getStoreInfo } = useStoreInfo();
-  const { products, getAllProducts } = useProductsStore();
-  const { stats, getStots } = useStatsStore();
+  const { products, stats, getAllProducts, getStats } = useProductsStore();
   ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
   useEffect(() => {
     getStoreInfo();
     getAllProducts();
-    getStots();
+    getStats();
   }, []);
 
   const polarAreaData = {
@@ -48,10 +48,9 @@ const App = () => {
     ],
   };
 
-  console.log(polarAreaData);
-
   return (
     <>
+      <ReactNotifications />
       {storeInfo.name && storeInfo.category && storeInfo.employees.length && (
         <header className="header">
           <h1>
