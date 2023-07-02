@@ -34,3 +34,13 @@ export interface IStoreInfoState {
   storeInfo: IStoreInfo;
   getStoreInfo: () => void;
 }
+
+export interface IStatResponse {
+  numberOfProducts: number;
+  category: string;
+}
+
+export interface IStotsState {
+  stats: IStatResponse[];
+  getStots: () => void;
+}
