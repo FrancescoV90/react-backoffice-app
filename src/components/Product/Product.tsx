@@ -1,12 +1,23 @@
+import { useState } from "react";
 import { IProductProps } from "../../interfaces/backoffice.interfaces";
 import { useProductsStore } from "../../store/products.store";
+import Modal from "react-modal";
 import "./Product.scss";
 
 const Product = ({ id, data }: IProductProps) => {
   const { deleteProduct } = useProductsStore();
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   const onDeleteProduct = () => {
     deleteProduct(id);
+  };
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -16,7 +27,16 @@ const Product = ({ id, data }: IProductProps) => {
       <span>{data.price}</span>
       <span>{data.employee}</span>
       <span>{data.description}</span>
-      <button onClick={onDeleteProduct}>delete product</button>
+      <button onClick={openModal}>Elimina prodotto</button>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Example Modal"
+      >
+        <h2>Sei sicuro di voler eliminare {data.title}</h2>
+        <button onClick={closeModal}>Chiudi</button>
+        <button onClick={onDeleteProduct}>Elimina</button>
+      </Modal>
     </div>
   );
 };
