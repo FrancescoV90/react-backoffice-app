@@ -5,6 +5,7 @@ import {
 } from "../../interfaces/backoffice.interfaces";
 import AddProduct from "../AddProduct/AddProduct";
 import Product from "../Product/Product";
+import { FaList, FaTableCellsLarge } from "react-icons/fa6";
 import "./Products.scss";
 
 const Products = ({ products }: IProductsProps) => {
@@ -19,6 +20,7 @@ const Products = ({ products }: IProductsProps) => {
       <div className="product-actions">
         <AddProduct />
         <button className="change-view-button" onClick={onChangeView}>
+          {isPanelView ? <FaTableCellsLarge /> : <FaList />}
           Cambia visualizzazione prodotti
         </button>
       </div>

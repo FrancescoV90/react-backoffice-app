@@ -3,6 +3,7 @@ import { IAddProductRequest } from "../../interfaces/backoffice.interfaces";
 import { useProductsStore } from "../../store/products.store";
 import { useForm } from "react-hook-form";
 import Modal from "react-modal";
+import { FaCirclePlus, FaCircleXmark } from "react-icons/fa6";
 
 const AddProduct = () => {
   const { addProduct } = useProductsStore();
@@ -24,7 +25,10 @@ const AddProduct = () => {
 
   return (
     <>
-      <button onClick={openModal}>Aggiungi prodotto</button>
+      <button onClick={openModal}>
+        <FaCirclePlus />
+        Aggiungi prodotto
+      </button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -37,9 +41,15 @@ const AddProduct = () => {
           <input type="number" {...register("price", { required: true })} />
           <input {...register("employee", { required: true })} />
           <input {...register("description", { required: true })} />
-          <button type="submit">Aggiungi</button>
+          <button type="submit">
+            <FaCirclePlus />
+            Aggiungi
+          </button>
         </form>
-        <button onClick={closeModal}>Chiudi</button>
+        <button onClick={closeModal}>
+          <FaCircleXmark />
+          Chiudi
+        </button>
       </Modal>
     </>
   );

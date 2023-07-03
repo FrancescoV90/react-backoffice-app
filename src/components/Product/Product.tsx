@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IProductProps } from "../../interfaces/backoffice.interfaces";
 import { useProductsStore } from "../../store/products.store";
+import { FaTrashCan, FaCircleXmark } from "react-icons/fa6";
 import Modal from "react-modal";
 import "./Product.scss";
 
@@ -28,6 +29,7 @@ const Product = ({ id, data }: IProductProps) => {
       <span>{data.employee}</span>
       <span>{data.description}</span>
       <button className="delete-button" onClick={openModal}>
+        <FaTrashCan />
         Elimina prodotto
       </button>
       <Modal
@@ -36,8 +38,12 @@ const Product = ({ id, data }: IProductProps) => {
         contentLabel="Example Modal"
       >
         <h2>Sei sicuro di voler eliminare {data.title}</h2>
-        <button onClick={closeModal}>Chiudi</button>
+        <button onClick={closeModal}>
+          <FaCircleXmark />
+          Chiudi
+        </button>
         <button className="delete-button" onClick={onDeleteProduct}>
+          <FaTrashCan />
           Elimina
         </button>
       </Modal>
