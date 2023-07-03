@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import Modal from "react-modal";
 import { IAddProductRequest } from "../../interfaces/backoffice.interfaces";
 
-const AddProductButton = () => {
+const AddProduct = () => {
   const { addProduct } = useProductsStore();
   const [modalIsOpen, setIsOpen] = useState(false);
   const { register, handleSubmit } = useForm<IAddProductRequest>();
@@ -23,7 +23,7 @@ const AddProductButton = () => {
   };
 
   return (
-    <div className="product">
+    <div className="add-product-wrapper">
       <button onClick={openModal}>Aggiungi prodotto</button>
       <Modal
         isOpen={modalIsOpen}
@@ -45,4 +45,4 @@ const AddProductButton = () => {
   );
 };
 
-export default AddProductButton;
+export default AddProduct;

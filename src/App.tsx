@@ -11,7 +11,7 @@ import {
 import { PolarArea } from "react-chartjs-2";
 import { ReactNotifications } from "react-notifications-component";
 import Products from "./components/Products/Products";
-import AddProductButton from "./components/AddProductButton/AddProductButton";
+import AddProduct from "./components/AddProduct/AddProduct";
 import "react-notifications-component/dist/theme.css";
 import "./App.scss";
 
@@ -68,7 +68,7 @@ const App = () => {
           </p>
         </header>
       )}
-      <AddProductButton />
+      <AddProduct />
       <Products products={products} />
       <PolarArea data={polarAreaData} />
     </>
