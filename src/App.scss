@@ -1,7 +1,8 @@
 .header {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 1024px) {

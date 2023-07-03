@@ -3,6 +3,7 @@ import {
   IProductResponse,
   IProductsProps,
 } from "../../interfaces/backoffice.interfaces";
+import AddProduct from "../AddProduct/AddProduct";
 import Product from "../Product/Product";
 import "./Products.scss";
 
@@ -15,9 +16,12 @@ const Products = ({ products }: IProductsProps) => {
 
   return (
     <>
-      <button className="change-view-button" onClick={onChangeView}>
-        Cambia visualizzazione prodotti
-      </button>
+      <div className="product-actions">
+        <AddProduct />
+        <button className="change-view-button" onClick={onChangeView}>
+          Cambia visualizzazione prodotti
+        </button>
+      </div>
       <ul className={isPanelView ? "panel" : "grid"}>
         {products.map((product: IProductResponse) => (
           <li key={`product_${product.id}`}>

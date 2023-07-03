@@ -1,8 +1,8 @@
 import { useState } from "react";
+import { IAddProductRequest } from "../../interfaces/backoffice.interfaces";
 import { useProductsStore } from "../../store/products.store";
 import { useForm } from "react-hook-form";
 import Modal from "react-modal";
-import { IAddProductRequest } from "../../interfaces/backoffice.interfaces";
 
 const AddProduct = () => {
   const { addProduct } = useProductsStore();
@@ -23,7 +23,7 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="add-product-wrapper">
+    <>
       <button onClick={openModal}>Aggiungi prodotto</button>
       <Modal
         isOpen={modalIsOpen}
@@ -41,7 +41,7 @@ const AddProduct = () => {
         </form>
         <button onClick={closeModal}>Chiudi</button>
       </Modal>
-    </div>
+    </>
   );
 };
 

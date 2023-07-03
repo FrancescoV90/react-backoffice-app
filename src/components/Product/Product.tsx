@@ -27,7 +27,9 @@ const Product = ({ id, data }: IProductProps) => {
       <span>{data.price}</span>
       <span>{data.employee}</span>
       <span>{data.description}</span>
-      <button onClick={openModal}>Elimina prodotto</button>
+      <button className="delete-button" onClick={openModal}>
+        Elimina prodotto
+      </button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -35,7 +37,9 @@ const Product = ({ id, data }: IProductProps) => {
       >
         <h2>Sei sicuro di voler eliminare {data.title}</h2>
         <button onClick={closeModal}>Chiudi</button>
-        <button onClick={onDeleteProduct}>Elimina</button>
+        <button className="delete-button" onClick={onDeleteProduct}>
+          Elimina
+        </button>
       </Modal>
     </div>
   );
