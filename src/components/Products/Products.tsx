@@ -24,6 +24,7 @@ const Products = ({ products }: IProductsProps) => {
           Cambia visualizzazione prodotti
         </button>
       </div>
+      <h2 className="productsTitle">Prodotti</h2>
       <ul className={isPanelView ? "panel" : "grid"}>
         {products.map((product: IProductResponse) => (
           <li key={`product_${product.id}`}>

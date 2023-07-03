@@ -56,19 +56,28 @@ const App = () => {
           <h1>
             {storeInfo.name} - {storeInfo.category}
           </h1>
-          <p>
-            <span>Dipendenti: </span>
-            {storeInfo.employees.map((employe, index) => (
-              <span key={`emplye_${index}`}>
-                {employe}
-                {index < storeInfo.employees.length - 1 ? "," : ""}{" "}
-              </span>
-            ))}
-          </p>
+          <div className="header-employees">
+            <h2>Dipendenti: </h2>
+            <p>
+              {storeInfo.employees.map((employe, index) => (
+                <span key={`emplye_${index}`}>
+                  {employe}
+                  {index < storeInfo.employees.length - 1 ? "," : ""}{" "}
+                </span>
+              ))}
+            </p>
+          </div>
         </header>
       )}
-      <Products products={products} />
-      <PolarArea data={polarAreaData} />
+
+      <main className="productsWrapper">
+        <Products products={products} />
+      </main>
+
+      <div className="chartWrapper">
+        <h2 className="chartTitle">Grafico prodotti per categoria</h2>
+        <PolarArea data={polarAreaData} />
+      </div>
     </>
   );
 };
