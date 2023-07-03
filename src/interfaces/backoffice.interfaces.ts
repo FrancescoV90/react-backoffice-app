@@ -35,9 +35,18 @@ export interface IProductsState {
   getStats: () => void;
   getAllProducts: () => void;
   deleteProduct: (idProduct: string) => void;
+  addProduct: (data: IAddProductRequest) => void;
 }
 
 export interface IStoreInfoState {
   storeInfo: IStoreInfo;
   getStoreInfo: () => void;
+}
+
+export interface IAddProductRequest {
+  title: string;
+  category: string;
+  price: string;
+  employee: string;
+  description: string;
 }
