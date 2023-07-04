@@ -19,13 +19,13 @@ const Products = ({ products }: IProductsProps) => {
     <>
       <div className="products-actions">
         <AddProduct />
-        <button className="change-view-button" onClick={onChangeView}>
+        <button className="products-change-view" onClick={onChangeView}>
           {isPanelView ? <FaTableCellsLarge /> : <FaList />}
           Cambia visualizzazione prodotti
         </button>
       </div>
       <h2 className="products-title">Prodotti</h2>
-      <ul className={isPanelView ? "panel" : "grid"}>
+      <ul className={isPanelView ? "products-panel" : "products-grid"}>
         {products.map((product: IProductResponse) => (
           <li key={`product_${product.id}`}>
             {<Product id={product.id} data={product.data} />}

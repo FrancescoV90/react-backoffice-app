@@ -70,12 +70,12 @@ const App = () => {
         </header>
       )}
 
-      <main className="productsWrapper">
+      <main className="products-wrapper">
         <Products products={products} />
       </main>
 
-      <div className="chartWrapper">
-        <h2 className="chartTitle">Grafico prodotti per categoria</h2>
+      <div className="chart-wrapper">
+        <h2 className="chart-title">Grafico prodotti per categoria</h2>
         <PolarArea data={polarAreaData} />
       </div>
     </>

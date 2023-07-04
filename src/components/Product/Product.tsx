@@ -56,7 +56,7 @@ const Product = ({ id, data }: IProductProps) => {
         contentLabel="Example Modal"
       >
         <h2>Sei sicuro di voler eliminare {data.title}</h2>
-        <button onClick={closeModal}>
+        <button className="product-close-button" onClick={closeModal}>
           <FaCircleXmark />
           Chiudi
         </button>

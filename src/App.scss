@@ -10,23 +10,23 @@
     align-items: baseline;
     gap: 0.5rem;
   }
-}
 
-.chartWrapper {
-  margin: 0 auto;
-  max-width: 50rem;
-  margin-top: 4rem;
-}
-
-.chartTitle {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 1024px) {
-  .header {
+  @media (min-width: 1024px) {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+  }
+}
+
+.chart {
+  &-wrapper {
+    margin: 0 auto;
+    max-width: 50rem;
+    margin-top: 4rem;
+  }
+
+  &-title {
+    text-align: center;
+    margin-bottom: 1rem;
   }
 }
