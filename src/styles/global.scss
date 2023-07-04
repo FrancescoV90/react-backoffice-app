@@ -15,8 +15,8 @@ body {
   font-weight: 400;
   letter-spacing: 0.031rem;
 
-  color: #213547;
-  background-color: #ffffff;
+  color: rgb(33, 53, 71);
+  background-color: rgb(237, 239, 242);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -58,4 +58,23 @@ button {
   color: rgb(255, 255, 255);
   border-radius: 1rem;
   cursor: pointer;
+
+  &::before {
+    content: "";
+    border-radius: inherit;
+    color: inherit;
+    background-color: currentColor;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), background 0.6s;
+  }
+
+  &:hover::before {
+    opacity: 0.18;
+  }
 }
