@@ -5,12 +5,15 @@ import { FaTrashCan, FaCircleXmark } from "react-icons/fa6";
 import Modal from "react-modal";
 import "./Product.scss";
 
+Modal.setAppElement("#root");
+
 const Product = ({ id, data }: IProductProps) => {
   const { deleteProduct } = useProductsStore();
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const onDeleteProduct = () => {
     deleteProduct(id);
+    closeModal();
   };
 
   const openModal = () => {
@@ -54,16 +57,22 @@ const Product = ({ id, data }: IProductProps) => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Example Modal"
+        className="product-modal"
+        overlayClassName="product-modal-overlay"
       >
-        <h2>Sei sicuro di voler eliminare {data.title}</h2>
-        <button className="product-close-button" onClick={closeModal}>
-          <FaCircleXmark />
-          Chiudi
-        </button>
-        <button className="product-delete-button" onClick={onDeleteProduct}>
-          <FaTrashCan />
-          Elimina
-        </button>
+        <h3>
+          Sei sicuro di voler eliminare: <strong>{data.title}</strong>
+        </h3>
+        <div className="product-actions">
+          <button className="product-close-button" onClick={closeModal}>
+            <FaCircleXmark />
+            Chiudi
+          </button>
+          <button className="product-delete-button" onClick={onDeleteProduct}>
+            <FaTrashCan />
+            Elimina
+          </button>
+        </div>
       </Modal>
     </div>
   );

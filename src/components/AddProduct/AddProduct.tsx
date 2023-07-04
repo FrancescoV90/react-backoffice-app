@@ -6,6 +6,8 @@ import Modal from "react-modal";
 import { FaCirclePlus, FaCircleXmark } from "react-icons/fa6";
 import "./AddProduct.scss";
 
+Modal.setAppElement("#root");
+
 const AddProduct = () => {
   const { addProduct } = useProductsStore();
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -34,22 +36,26 @@ const AddProduct = () => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Example Modal"
+        className="add-product-modal"
+        overlayClassName="add-product-modal-overlay"
       >
-        <h2>Compila il seguente form per aggiungere un prodotto</h2>
+        <h3>Compila il seguente form per aggiungere un prodotto</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input {...register("title", { required: true })} />
           <input {...register("category", { required: true })} />
           <input type="number" {...register("price", { required: true })} />
           <input {...register("employee", { required: true })} />
           <input {...register("description", { required: true })} />
-          <button className="add-product-close-button" onClick={closeModal}>
-            <FaCircleXmark />
-            Chiudi
-          </button>
-          <button className="add-product-add-button" type="submit">
-            <FaCirclePlus />
-            Aggiungi
-          </button>
+          <div className="add-product-actions">
+            <button className="add-product-close-button" onClick={closeModal}>
+              <FaCircleXmark />
+              Chiudi
+            </button>
+            <button className="add-product-add-button" type="submit">
+              <FaCirclePlus />
+              Aggiungi
+            </button>
+          </div>
         </form>
       </Modal>
     </>
