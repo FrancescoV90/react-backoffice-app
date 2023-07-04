@@ -23,12 +23,30 @@ const Product = ({ id, data }: IProductProps) => {
 
   return (
     <div className="product">
-      <span>{data.title}</span>
-      <span>{data.category}</span>
-      <span>{data.price}</span>
-      <span>{data.employee}</span>
-      <span>{data.description}</span>
-      <button className="delete-button" onClick={openModal}>
+      <div className="product-info">
+        <div>
+          <span className="product-label">Titolo: </span>
+          <span>{data.title}</span>
+        </div>
+        <div>
+          <span className="product-label">Categoria: </span>
+          <span>{data.category}</span>
+        </div>
+        <div>
+          <span className="product-label">Prezzo: </span>
+          <span>{data.price}</span>
+        </div>
+        <div>
+          <span className="product-label">Dipendente: </span>
+          <span>{data.employee}</span>
+        </div>
+        <div>
+          <span className="product-label">Descrizione: </span>
+          <span>{data.description}</span>
+        </div>
+      </div>
+
+      <button className="product-delete-button" onClick={openModal}>
         <FaTrashCan />
         Elimina prodotto
       </button>
@@ -42,7 +60,7 @@ const Product = ({ id, data }: IProductProps) => {
           <FaCircleXmark />
           Chiudi
         </button>
-        <button className="delete-button" onClick={onDeleteProduct}>
+        <button className="product-delete-button" onClick={onDeleteProduct}>
           <FaTrashCan />
           Elimina
         </button>

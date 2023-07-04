@@ -1,3 +1,14 @@
+.products-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.products-title {
+  margin-bottom: 1rem;
+}
+
 .panel {
   display: flex;
   flex-direction: column;
@@ -8,13 +19,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   gap: 1.5rem;
-}
-
-.product-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
 }
 
 @media (min-width: 1024px) {
