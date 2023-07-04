@@ -4,6 +4,7 @@ import { useProductsStore } from "../../store/products.store";
 import { useForm } from "react-hook-form";
 import Modal from "react-modal";
 import { FaCirclePlus, FaCircleXmark } from "react-icons/fa6";
+import "./AddProduct.scss";
 
 const AddProduct = () => {
   const { addProduct } = useProductsStore();
@@ -25,7 +26,7 @@ const AddProduct = () => {
 
   return (
     <>
-      <button onClick={openModal}>
+      <button className="add-product-add-button" onClick={openModal}>
         <FaCirclePlus />
         Aggiungi prodotto
       </button>
@@ -41,15 +42,15 @@ const AddProduct = () => {
           <input type="number" {...register("price", { required: true })} />
           <input {...register("employee", { required: true })} />
           <input {...register("description", { required: true })} />
-          <button type="submit">
+          <button className="add-product-close-button" onClick={closeModal}>
+            <FaCircleXmark />
+            Chiudi
+          </button>
+          <button className="add-product-add-button" type="submit">
             <FaCirclePlus />
             Aggiungi
           </button>
         </form>
-        <button onClick={closeModal}>
-          <FaCircleXmark />
-          Chiudi
-        </button>
       </Modal>
     </>
   );
