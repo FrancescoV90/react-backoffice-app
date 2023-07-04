@@ -77,3 +77,23 @@ button {
     opacity: 0.18;
   }
 }
+
+input {
+  background-color: rgb(255, 255, 255);
+  color: rgb(33, 53, 71);
+  padding: 1rem;
+  height: 3.5rem;
+  display: block;
+  width: 100%;
+  border-radius: 0.25rem;
+  border: 1px solid rgb(132, 146, 164);
+  letter-spacing: inherit;
+
+  &:focus {
+    outline: none;
+    border-color: transparent;
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 0 0 2px rgb(0, 81, 195);
+    box-shadow: 0 0 0 2px rgb(0, 81, 195);
+  }
+}

@@ -64,13 +64,13 @@ const Product = ({ id, data }: IProductProps) => {
           Sei sicuro di voler eliminare: <strong>{data.title}</strong>
         </h3>
         <div className="product-actions">
-          <button className="product-close-button" onClick={closeModal}>
-            <FaCircleXmark />
-            Chiudi
-          </button>
           <button className="product-delete-button" onClick={onDeleteProduct}>
             <FaTrashCan />
             Elimina
+          </button>
+          <button className="product-close-button" onClick={closeModal}>
+            <FaCircleXmark />
+            Chiudi
           </button>
         </div>
       </Modal>
