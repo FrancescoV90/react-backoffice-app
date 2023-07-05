@@ -11,6 +11,7 @@ import {
 import { PolarArea } from "react-chartjs-2";
 import { ReactNotifications } from "react-notifications-component";
 import Products from "./components/Products/Products";
+import Loader from "./components/Loader/Loader";
 import "react-notifications-component/dist/theme.css";
 import "./App.scss";
 
@@ -51,36 +52,41 @@ const App = () => {
   return (
     <>
       <ReactNotifications isMobile={true} />
+      {storeInfo.name ? (
+        <div className="app-container">
+          {storeInfo.name &&
+            storeInfo.category &&
+            storeInfo.employees.length && (
+              <header className="header">
+                <h1>
+                  {storeInfo.name} - {storeInfo.category}
+                </h1>
+                <div className="header-employees">
+                  <h2>Dipendenti: </h2>
+                  <p>
+                    {storeInfo.employees.map((employe, index) => (
+                      <span key={`emplye_${index}`}>
+                        {employe}
+                        {index < storeInfo.employees.length - 1 ? "," : ""}{" "}
+                      </span>
+                    ))}
+                  </p>
+                </div>
+              </header>
+            )}
 
-      <div className="app-container">
-        {storeInfo.name && storeInfo.category && storeInfo.employees.length && (
-          <header className="header">
-            <h1>
-              {storeInfo.name} - {storeInfo.category}
-            </h1>
-            <div className="header-employees">
-              <h2>Dipendenti: </h2>
-              <p>
-                {storeInfo.employees.map((employe, index) => (
-                  <span key={`emplye_${index}`}>
-                    {employe}
-                    {index < storeInfo.employees.length - 1 ? "," : ""}{" "}
-                  </span>
-                ))}
-              </p>
-            </div>
-          </header>
-        )}
+          <main className="products-wrapper">
+            <Products products={products} />
+          </main>
 
-        <main className="products-wrapper">
-          <Products products={products} />
-        </main>
-
-        <footer className="chart-wrapper">
-          <h2 className="chart-title">Grafico prodotti per categoria</h2>
-          <PolarArea data={polarAreaData} />
-        </footer>
-      </div>
+          <footer className="chart-wrapper">
+            <h2 className="chart-title">Grafico prodotti per categoria</h2>
+            <PolarArea data={polarAreaData} />
+          </footer>
+        </div>
+      ) : (
+        <Loader />
+      )}
     </>
   );
 };

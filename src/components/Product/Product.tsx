@@ -29,7 +29,7 @@ const Product = ({ id, data }: IProductProps) => {
       <div className="product-info">
         <div>
           <span className="product-label">Titolo: </span>
-          <span>{data.title}</span>
+          <span className="product-title">{data.title}</span>
         </div>
         <div>
           <span className="product-label">Categoria: </span>
