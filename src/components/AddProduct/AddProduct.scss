@@ -48,4 +48,12 @@
   &-add-button {
     background-color: rgb(0, 81, 195);
   }
+
+  &-error-message {
+    color: rgb(235, 20, 3);
+  }
+
+  &-input-error {
+    border-color: rgb(235, 20, 3);
+  }
 }
