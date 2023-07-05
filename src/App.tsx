@@ -50,33 +50,35 @@ const App = () => {
 
   return (
     <>
-      <ReactNotifications />
-      {storeInfo.name && storeInfo.category && storeInfo.employees.length && (
-        <header className="header">
-          <h1>
-            {storeInfo.name} - {storeInfo.category}
-          </h1>
-          <div className="header-employees">
-            <h2>Dipendenti: </h2>
-            <p>
-              {storeInfo.employees.map((employe, index) => (
-                <span key={`emplye_${index}`}>
-                  {employe}
-                  {index < storeInfo.employees.length - 1 ? "," : ""}{" "}
-                </span>
-              ))}
-            </p>
-          </div>
-        </header>
-      )}
+      <ReactNotifications isMobile={true} />
+      <div className="app-container">
+        {storeInfo.name && storeInfo.category && storeInfo.employees.length && (
+          <header className="header">
+            <h1>
+              {storeInfo.name} - {storeInfo.category}
+            </h1>
+            <div className="header-employees">
+              <h2>Dipendenti: </h2>
+              <p>
+                {storeInfo.employees.map((employe, index) => (
+                  <span key={`emplye_${index}`}>
+                    {employe}
+                    {index < storeInfo.employees.length - 1 ? "," : ""}{" "}
+                  </span>
+                ))}
+              </p>
+            </div>
+          </header>
+        )}
 
-      <main className="products-wrapper">
-        <Products products={products} />
-      </main>
+        <main className="products-wrapper">
+          <Products products={products} />
+        </main>
 
-      <div className="chart-wrapper">
-        <h2 className="chart-title">Grafico prodotti per categoria</h2>
-        <PolarArea data={polarAreaData} />
+        <footer className="chart-wrapper">
+          <h2 className="chart-title">Grafico prodotti per categoria</h2>
+          <PolarArea data={polarAreaData} />
+        </footer>
       </div>
     </>
   );

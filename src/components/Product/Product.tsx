@@ -41,11 +41,11 @@ const Product = ({ id, data }: IProductProps) => {
         </div>
         <div>
           <span className="product-label">Dipendente: </span>
-          <span>{data.employee}</span>
+          <span>{data.employee ? data.employee : "---"}</span>
         </div>
         <div>
           <span className="product-label">Descrizione: </span>
-          <span>{data.description}</span>
+          <span>{data.description ? data.description : "---"}</span>
         </div>
       </div>
 

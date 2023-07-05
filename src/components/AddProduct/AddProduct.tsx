@@ -43,26 +43,20 @@ const AddProduct = () => {
         <h3>Compila il seguente form per aggiungere un prodotto</h3>
         <form className="add-product-form" onSubmit={handleSubmit(onSubmit)}>
           <input
-            placeholder="Titolo"
+            placeholder="Titolo* (obbligatorio)"
             {...register("title", { required: true })}
           />
           <input
-            placeholder="Categoria"
+            placeholder="Categoria* (obbligatorio)"
             {...register("category", { required: true })}
           />
           <input
-            placeholder="Prezzo"
+            placeholder="Prezzo* (obbligatorio)"
             type="number"
             {...register("price", { required: true })}
           />
-          <input
-            placeholder="Dipendente"
-            {...register("employee", { required: true })}
-          />
-          <input
-            placeholder="Descrizione"
-            {...register("description", { required: true })}
-          />
+          <input placeholder="Dipendente" {...register("employee")} />
+          <input placeholder="Descrizione" {...register("description")} />
           <div className="add-product-actions">
             <button className="add-product-add-button" type="submit">
               <FaCirclePlus />
