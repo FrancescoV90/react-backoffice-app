@@ -51,6 +51,7 @@ const App = () => {
   return (
     <>
       <ReactNotifications isMobile={true} />
+
       <div className="app-container">
         {storeInfo.name && storeInfo.category && storeInfo.employees.length && (
           <header className="header">

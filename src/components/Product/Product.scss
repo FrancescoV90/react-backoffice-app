@@ -62,3 +62,21 @@
     background-color: rgb(235, 20, 3);
   }
 }
+
+.products-grid {
+  .product-description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.products-panel {
+  @media (min-width: 1024px) {
+    .product-delete-button {
+      margin-left: auto;
+    }
+  }
+}

@@ -45,7 +45,9 @@ const Product = ({ id, data }: IProductProps) => {
         </div>
         <div>
           <span className="product-label">Descrizione: </span>
-          <span>{data.description ? data.description : "---"}</span>
+          <span className="product-description">
+            {data.description ? data.description : "---"}
+          </span>
         </div>
       </div>
 
